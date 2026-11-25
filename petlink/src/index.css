@@ -1,0 +1,15 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+body{@apply font-sans bg-cream text-slate-800}
+
+/* ---- Animaciones ---- */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+.grid>.rounded-3xl.bg-white,.grid>.rounded-2xl{transition:transform .25s ease,box-shadow .25s ease}
+.grid>.rounded-3xl.bg-white:hover,.grid>.rounded-2xl:hover{transform:translateY(-4px);box-shadow:0 14px 26px -10px rgba(14,124,134,.3)}
+@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.5)}100%{transform:scale(1)}}
+.pop{animation:pop .35s ease}
+@keyframes toastIn{from{opacity:0;transform:translate(-50%,16px)}to{opacity:1;transform:translate(-50%,0)}}
+.toast{animation:toastIn .3s ease}
+input,select{transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus{box-shadow:0 0 0 3px rgba(21,150,163,.2)}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation:none!important}}
